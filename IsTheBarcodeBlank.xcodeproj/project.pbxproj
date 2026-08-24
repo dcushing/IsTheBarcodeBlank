@@ -27,6 +27,9 @@
 		5CDB4000303CA15F008ECFA3 /* IsTheBarcodeBlank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IsTheBarcodeBlank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CDB400D303CA160008ECFA3 /* IsTheBarcodeBlankTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IsTheBarcodeBlankTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CDB4017303CA160008ECFA3 /* IsTheBarcodeBlankUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IsTheBarcodeBlankUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CDB4070303CA9FF008ECFA3 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		5CDB4071303CA9FF008ECFA3 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		5CDB4072303CA9FF008ECFA3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -98,6 +101,9 @@
 		5CDB3FF7303CA15F008ECFA3 = {
 			isa = PBXGroup;
 			children = (
+				5CDB4070303CA9FF008ECFA3 /* .gitignore */,
+				5CDB4071303CA9FF008ECFA3 /* LICENSE */,
+				5CDB4072303CA9FF008ECFA3 /* README.md */,
 				5CDB4002303CA15F008ECFA3 /* IsTheBarcodeBlank */,
 				5CDB4010303CA160008ECFA3 /* IsTheBarcodeBlankTests */,
 				5CDB401A303CA160008ECFA3 /* IsTheBarcodeBlankUITests */,

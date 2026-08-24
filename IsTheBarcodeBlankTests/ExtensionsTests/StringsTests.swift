@@ -8,17 +8,6 @@
 import Testing
 
 struct StringsTests {
-    // MARK: asInt
-    @Test("asInt returns nil if string can't be converted to int")
-    func asIntReturnsNilIfStringIsNotInt() async throws {
-        #expect("not an int".asInt == nil)
-    }
-    
-    @Test("asInt returns int if string can be converted to int")
-    func asIntReturnsIntIfStringIsInt() async throws {
-        #expect("3".asInt == 3)
-    }
-    
     // MARK: asDouble
     @Test("asDouble returns nil if string can't be converted to double")
     func asDoubleReturnsNilIfStringIsNotDouble() async throws {
@@ -29,7 +18,66 @@ struct StringsTests {
     func asDoubleReturnsDoubleIfStringIsDouble() async throws {
         #expect("3.3".asDouble == 3.3)
     }
+    
+    // MARK: asInt
+    @Test("asInt returns nil if string can't be converted to int")
+    func asIntReturnsNilIfStringIsNotInt() async throws {
+        #expect("not an int".asInt == nil)
+    }
+    
+    @Test("asInt returns int if string can be converted to int")
+    func asIntReturnsIntIfStringIsInt() async throws {
+        #expect("3".asInt == 3)
+    }
 
+    // MARK: isEven
+    @Test("isEven is false when number can't be convered to double")
+    func isEvenIsFalseWhenNumberIsNotDouble() {
+        #expect("not a number".isEven == false)
+    }
+
+    @Test("isEven is false when number is not even")
+    func isEvenIsFalseWhenNumberIsNotEven() {
+        #expect("2.3".isEven == false)
+    }
+    
+    @Test("isEven is true when number is even")
+    func isEvenIsTrueWhenNumberIsEven() {
+        #expect("2.0".isEven == true)
+    }
+    
+    // MARK: isNegative
+    @Test("isNegative is false when number can't be convered to double")
+    func isNegativeIsFalseWhenNumberIsNotDouble() {
+        #expect("not a number".isNegative == false)
+    }
+
+    @Test("isNegative is false when number is greater than zero")
+    func isNegativeIsFalseWhenNumberIsGreaterThanZero() {
+        #expect("2.3".isNegative == false)
+    }
+    
+    @Test("isNegative is false when number is zero")
+    func isNegativeIsFalseWhenNumberIsZero() {
+        #expect("0.0".isNegative == false)
+    }
+    
+    @Test("isNegative is true when number is less than zero")
+    func isNegativeIsTrueWhenNumberIsLessThanZero() {
+        #expect("-12.0".isNegative == true)
+    }
+    
+    // MARK: isNotEmpty
+    @Test("isNotEmpty is false when string is empty")
+    func isNotEmptyIsFalseWhenStringIsEmpty() {
+        #expect("".isNotEmpty == false)
+    }
+    
+    @Test("isNotEmpty is true when string is not empty")
+    func isNotEmptyIsTrueWhenStringIsNotEmpty() {
+        #expect("not empty".isNotEmpty == true)
+    }
+    
     // MARK: isNumber
     @Test("isNumber is false if self is empty")
     func isNumberIsFalseIfSelfIsEmpty() {
@@ -95,52 +143,20 @@ struct StringsTests {
         #expect("https://example.com:-80".isUrl == false)
         #expect("ftp:/example.com".isUrl == false)
       }
-    
-    // MARK: isNotEmpty
-    @Test("isNotEmpty is false when string is empty")
-    func isNotEmptyIsFalseWhenStringIsEmpty() {
-        #expect("".isNotEmpty == false)
-    }
-    
-    @Test("isNotEmpty is true when string is not empty")
-    func isNotEmptyIsTrueWhenStringIsNotEmpty() {
-        #expect("not empty".isNotEmpty == true)
-    }
-    
-    // MARK: isEven
-    @Test("isEven is false when number can't be convered to double")
-    func isEvenIsFalseWhenNumberIsNotDouble() {
-        #expect("not a number".isEven == false)
+
+    // MARK: isWholeNumber
+    @Test("isWholeNumber is false when string isn't a number")
+    func isWholeNumberIsFalseWhenNumberIsNotANumber() {
+        #expect("not a number".isWholeNumber == false)
     }
 
-    @Test("isEven is false when number is not even")
-    func isEvenIsFalseWhenNumberIsNotEven() {
-        #expect("2.3".isEven == false)
+    @Test("isWholeNumber is false when number can't be converted to int")
+    func isWholeNumberIsFalseWhenNumberIsNotInt() {
+        #expect("2.3".isWholeNumber == false)
     }
     
-    @Test("isEven is true when number is even")
-    func isEvenIsTrueWhenNumberIsEven() {
-        #expect("2.0".isEven == true)
-    }
-    
-    // MARK: isNegative
-    @Test("isNegative is false when number can't be convered to double")
-    func isNegativeIsFalseWhenNumberIsNotDouble() {
-        #expect("not a number".isNegative == false)
-    }
-
-    @Test("isNegative is false when number is greater than zero")
-    func isNegativeIsFalseWhenNumberIsGreaterThanZero() {
-        #expect("2.3".isNegative == false)
-    }
-    
-    @Test("isNegative is false when number is zero")
-    func isNegativeIsFalseWhenNumberIsZero() {
-        #expect("0.0".isNegative == false)
-    }
-    
-    @Test("isNegative is true when number is less than zero")
-    func isNegativeIsTrueWhenNumberIsLessThanZero() {
-        #expect("-12.0".isNegative == true)
+    @Test("isWholeNumber is true when number is an int")
+    func isWholeNumberIsTrueWhenNumberIsInt() {
+        #expect("2".isWholeNumber == true)
     }
 }

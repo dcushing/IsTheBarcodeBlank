@@ -41,11 +41,35 @@
         }
       }
     },
+    "Is it a whole number?" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Es un número entero?"
+          }
+        }
+      }
+    },
     "Is it even?" : {
-
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Es un número par?"
+          }
+        }
+      }
     },
     "Is it negative?" : {
-
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Es negativo?"
+          }
+        }
+      }
     },
     "No" : {
       "localizations" : {

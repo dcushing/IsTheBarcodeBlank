@@ -64,8 +64,12 @@ private struct ResultItemView: View {
     }
 }
 
-#Preview("Number") {
+#Preview("Positive number") {
     ResultView(result: "1001000100", onDismiss: {})
+}
+
+#Preview("Negative number") {
+    ResultView(result: "-100100.2", onDismiss: {})
 }
 
 #Preview("URL") {

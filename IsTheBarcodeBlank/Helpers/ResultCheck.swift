@@ -8,7 +8,7 @@
 import SwiftUI
 
 enum ResultCheck: String, Identifiable, CaseIterable {
-    case number, url, even, negative
+    case number, url, even, negative, wholeNumber
     var id: String { return self.rawValue }
     
     var label: LocalizedStringKey {
@@ -21,6 +21,8 @@ enum ResultCheck: String, Identifiable, CaseIterable {
             "Is it a number?"
         case .url:
             "Is it a URL?"
+        case .wholeNumber:
+            "Is it a whole number?"
         }
     }
 
@@ -34,6 +36,8 @@ enum ResultCheck: String, Identifiable, CaseIterable {
             return code.isNumber
         case .url:
             return code.isUrl
+        case .wholeNumber:
+            return code.isWholeNumber
         }
     }
 }

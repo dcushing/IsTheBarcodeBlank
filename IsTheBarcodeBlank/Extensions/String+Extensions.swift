@@ -8,16 +8,28 @@
 import Foundation
 
 extension String {
-    var asInt: Int? { return Int(self) }
     var asDouble: Double? { return Double(self) }
+    var asInt: Int? { return Int(self) }
+    
+    var isEven: Bool {
+        guard let asDouble else { return false }
+        return asDouble.isEven
+    }
+
+    var isNegative: Bool {
+        guard let asDouble else { return false }
+        return asDouble.isNegative
+    }
+    
+    var isNotEmpty: Bool { return !self.isEmpty }
     
     var isNumber: Bool {
-        guard self.isNotEmpty else { return false }
+        guard isNotEmpty else { return false }
         return asDouble != nil || asInt != nil
     }
     
     var isUrl: Bool {
-        guard self.isNotEmpty else { return false }
+        guard isNotEmpty else { return false }
         do {
             let detector = try NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
             if let match = detector.firstMatch(in: self, options: [], range: NSRange(location: 0, length: self.utf16.count)) {
@@ -31,15 +43,5 @@ extension String {
         }
     }
 
-    var isNotEmpty: Bool { return !self.isEmpty }
-
-    var isEven: Bool {
-        guard let asDouble else { return false }
-        return asDouble.isEven
-    }
-
-    var isNegative: Bool {
-        guard let asDouble else { return false }
-        return asDouble.isNegative
-    }
+    var isWholeNumber: Bool { return asInt != nil }
 }

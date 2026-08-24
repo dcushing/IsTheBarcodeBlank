@@ -1,7 +1,48 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "About" : {
 
+    },
+    "Github" : {
+
+    },
+    "Is it a number?" : {
+
+    },
+    "Is it a URL?" : {
+
+    },
+    "No" : {
+
+    },
+    "No code scanned yet" : {
+
+    },
+    "Open in browser" : {
+
+    },
+    "Report a bug" : {
+
+    },
+    "Return home" : {
+
+    },
+    "Scan another" : {
+
+    },
+    "Scan code" : {
+
+    },
+    "Scanner unavailable" : {
+
+    },
+    "Yes!" : {
+
+    },
+    "You scanned:" : {
+
+    }
   },
   "version" : "1.1"
 }

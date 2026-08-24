@@ -21,8 +21,9 @@ struct ScannerView: View {
     @ViewBuilder
     var body: some View {
         if !scannerAvailable {
-            VStack {
+            VStack(spacing: 20) {
                 Text("Scanner unavailable")
+                Link("Open Settings", destination: URL(string: UIApplication.openSettingsURLString)!)
                 Button("Return home") { dismiss() }
             }
         } else {

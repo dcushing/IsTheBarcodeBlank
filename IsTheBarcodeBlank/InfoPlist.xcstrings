@@ -20,7 +20,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Grant camera access to scan documents"
+            "value" : "Enable camera access to scan documents"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Habilita el acceso a la cámara para escanear documentos"
           }
         }
       }

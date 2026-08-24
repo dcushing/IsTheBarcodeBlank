@@ -8,11 +8,15 @@
 import SwiftUI
 
 enum ResultCheck: String, Identifiable, CaseIterable {
-    case number, url
+    case number, url, even, negative
     var id: String { return self.rawValue }
     
     var label: LocalizedStringKey {
         switch self {
+        case .even:
+            "Is it even?"
+        case .negative:
+            "Is it negative?"
         case .number:
             "Is it a number?"
         case .url:
@@ -22,6 +26,10 @@ enum ResultCheck: String, Identifiable, CaseIterable {
 
     func isTrue(code: String) -> Bool {
         switch self {
+        case .even:
+            return code.isEven
+        case .negative:
+            return code.isNegative
         case .number:
             return code.isNumber
         case .url:

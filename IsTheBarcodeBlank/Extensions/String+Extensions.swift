@@ -8,9 +8,12 @@
 import Foundation
 
 extension String {
+    var asInt: Int? { return Int(self) }
+    var asDouble: Double? { return Double(self) }
+    
     var isNumber: Bool {
         guard self.isNotEmpty else { return false }
-        return Double(self) != nil
+        return asDouble != nil || asInt != nil
     }
     
     var isUrl: Bool {
@@ -29,4 +32,14 @@ extension String {
     }
 
     var isNotEmpty: Bool { return !self.isEmpty }
+
+    var isEven: Bool {
+        guard let asDouble else { return false }
+        return asDouble.isEven
+    }
+
+    var isNegative: Bool {
+        guard let asDouble else { return false }
+        return asDouble.isNegative
+    }
 }
